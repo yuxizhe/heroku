@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var rsj = require('rsj');
 //var Promise =require('es6-promise').Promise
-var  firebase = require ("firebase");
+//var  firebase = require ("firebase");
   //import Vue from 'vue'
   //import VueFire from "vuefire"
 

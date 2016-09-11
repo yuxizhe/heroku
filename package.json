@@ -14,8 +14,7 @@
     "es6-promise": "^3.2.1",
     "express": "4.13.3",
     "firebase": "^3.3.2",
-    "rsj": "^0.0.4",
-    
+    "rsj": "^0.0.4"
   },
   "repository": {
     "type": "git",
