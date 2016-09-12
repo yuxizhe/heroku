@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var http = require("http");
-//var firebase = require("firebase");
+var firebase = require("firebase");
 var parseString = require('xml2js').parseString;
 
 
@@ -22,14 +22,14 @@ function download(url, callback) {
 var url = 'http://www.mp4ba.com/rss.php';
 
 
-// firebase.initializeApp({
-//   serviceAccount: "./yuxizhe2008-1c6760c143d0.json",
-//   databaseURL: "https://yuxizhe2008.firebaseio.com"
-// });
+firebase.initializeApp({
+  serviceAccount: "./yuxizhe2008-1c6760c143d0.json",
+  databaseURL: "https://yuxizhe2008.firebaseio.com"
+});
 
-// function firebaseData(id){
-//     return firebase.database().ref('/'+id);
-//   };
+function firebaseData(id){
+    return firebase.database().ref('/'+id);
+  };
 
  
 
@@ -45,12 +45,12 @@ download(url, function(data) {
    console.log("error");
 });
 
-// function settime(){
-//     var time = new Date();
-//     firebaseData('time').push({a:time.toLocaleString()});
-// }
+function settime(){
+    var time = new Date();
+    firebaseData('time').push({a:time.toLocaleString()});
+}
 
-// setInterval(settime,5000);
+setInterval(settime,5000);
 
 app.set('port', (process.env.PORT || 5000));
 
