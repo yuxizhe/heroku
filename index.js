@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var rsj = require('rsj');
+//var rsj = require('rsj');
 //var Promise =require('es6-promise').Promise
 var  firebase = require ("firebase");
   //import Vue from 'vue'
@@ -24,18 +24,18 @@ function firebaseData(id){
     return firebase.database().ref('/'+id);
   };
 
-rsj.r2j('http://www.mp4ba.com/rss.php',function(json) {
-    var obj = eval('(' + json + ')');//js原生方法
-    //var obj = JSON.parse(json);//json.js包
+// rsj.r2j('http://www.mp4ba.com/rss.php',function(json) {
+//     var obj = eval('(' + json + ')');//js原生方法
+//     //var obj = JSON.parse(json);//json.js包
 
 
-    // for(var a =0;a<5;a++){
-    //     console.log(obj[a]);
-    // };
+//     // for(var a =0;a<5;a++){
+//     //     console.log(obj[a]);
+//     // };
     
-    firebaseData('rss').push(obj[1]);
-    //res.render('index', { title: 'testbook',layout:'layout',nav:'index',rssData:obj});
-});
+//     firebaseData('rss').push(obj[1]);
+//     //res.render('index', { title: 'testbook',layout:'layout',nav:'index',rssData:obj});
+// });
 
 
 function settime(){
