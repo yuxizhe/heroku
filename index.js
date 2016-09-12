@@ -48,6 +48,18 @@ download(url, function(data) {
 function settime(){
     var time = new Date();
     firebaseData('time').push({a:time.toLocaleString()});
+
+    download(url, function(data) {
+      if (data) {
+        //console.log(data)
+          parseString(data, function (err, result) {
+          firebaseData('rss').push({a:2});
+          //console.log(result.rss.channel[0].item[0])
+          });
+      }
+      else
+       console.log("error");
+    });
 }
 
 setInterval(settime,5000);
