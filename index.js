@@ -22,54 +22,57 @@ function download(url, callback) {
 var url = 'http://www.mp4ba.com/rss.php';
 
 
-firebase.initializeApp({
-  serviceAccount: "./yuxizhe2008-1c6760c143d0.json",
-  databaseURL: "https://yuxizhe2008.firebaseio.com"
-});
+// firebase.initializeApp({
+//   serviceAccount: "./yuxizhe2008-1c6760c143d0.json",
+//   databaseURL: "https://yuxizhe2008.firebaseio.com"
+// });
 
-function firebaseData(id){
-    return firebase.database().ref('/'+id);
-  };
+// function firebaseData(id){
+//     return firebase.database().ref('/'+id);
+//   };
 
  
 
-download(url, function(data) {
-  if (data) {
-    //console.log(data)
-      parseString(data, function (err, result) {
-      // firebaseData('rss').push({a:2});
-      //console.log(result.rss.channel[0].item[0])
-      });
-  }
-  else
-   console.log("error");
-});
+// download(url, function(data) {
+//   if (data) {
+//     //console.log(data)
+//       parseString(data, function (err, result) {
+//       //firebaseData('rss').push({a:2});
+//       //console.log(result.rss.channel[0].item[0])
+//       });
+//   }
+//   else
+//    console.log("error");
+// });
 
 function settime(){
-    // var time = new Date();
-    // firebaseData('time').push({a:time.toLocaleString()});
+    var time = new Date();
+    firebaseData('time').push({a:time.toLocaleString()});
 
     download(url, function(data) {
       if (data) {
         //console.log(data)
           parseString(data, function (err, result) {
           //firebase("rss").remove();
-          var blog;
-          for(blog =0; blog<20;blog++){
-          var text = result.rss.channel[0].item[blog];
-          firebaseData('rss').push({title:text.title,
-                                      description:text.description,
-                                      category:text.category
-                                      });
-              }
-          });
+          if(result){
+                       var blog;
+              for(blog =0; blog<20;blog++){
+              var text = result.rss.channel[0].item[blog];
+              firebaseData('rss').push({title:text.title,
+                                          description:text.description,
+                                          category:text.category
+                                          });
+                console.log(text.title);
+                  }
+               }
+         });
       }
       else
        console.log("error");
     });
 }
 
-setInterval(settime,60000);
+setInterval(settime,10000);
 
 app.set('port', (process.env.PORT || 5000));
 
