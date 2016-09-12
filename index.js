@@ -37,7 +37,7 @@ download(url, function(data) {
   if (data) {
     //console.log(data)
       parseString(data, function (err, result) {
-      //firebaseData('rss').push(result.rss.channel[0].item[0]);
+      firebaseData('rss').push(result.rss.channel[0].item[0]);
       console.log(result.rss.channel[0].item[0])
       });
   }
