@@ -53,7 +53,7 @@ function settime(){
       if (data) {
         //console.log(data)
           parseString(data, function (err, result) {
-          firebase("rss").remove();
+          //firebase("rss").remove();
           var blog;
           for(blog =0; blog<20;blog++){
           var text = result.rss.channel[0].item[blog];
@@ -69,7 +69,7 @@ function settime(){
     });
 }
 
-setInterval(settime,20000);
+setInterval(settime,60000);
 
 app.set('port', (process.env.PORT || 5000));
 
