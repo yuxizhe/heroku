@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 //var rsj = require('rsj');
 //var Promise =require('es6-promise').Promise
-var  firebase = require ("firebase");
+//var  firebase = require ("firebase");
 //var cheerio = require('cheerio');
 //var $ = cheerio.load('http://www.mp4ba.com/rss.php');
 var http = require("http");
@@ -30,71 +30,23 @@ function download(url, callback) {
 var url = 'http://www.mp4ba.com/rss.php';
 
 
-
-
-  //import Vue from 'vue'
-  //import VueFire from "vuefire"
-//   var FeedMe = require('feedme')
-//   , parser = new FeedMe()
-//   , fs = require('fs')
- 
-// parser.on('title', function(title) {
-//   console.log('title of feed is', title);
+// firebase.initializeApp({
+//   serviceAccount: "./yuxizhe2008-1c6760c143d0.json",
+//   databaseURL: "https://yuxizhe2008.firebaseio.com"
 // });
+
+// function firebaseData(id){
+//     return firebase.database().ref('/'+id);
+//   };
+
  
-// parser.on('item', function(item) {
-//   console.log(item);
-// });
- 
-// // sax-js and clarinet allow streaming 
-// // which means faster parsing for larger feeds! 
-// fs.createReadStream('http://www.mp4ba.com/rss.php').pipe(parser);
-
-firebase.initializeApp({
-  serviceAccount: "./yuxizhe2008-1c6760c143d0.json",
-  databaseURL: "https://yuxizhe2008.firebaseio.com"
-});
-
-function firebaseData(id){
-    return firebase.database().ref('/'+id);
-  };
-
-  // function request(url) {
-  //     return new Promise(function (resolve) {
-  //       var xhr = new XMLHttpRequest()
-  //       xhr.open('GET', url)
-  //       xhr.send()
-  //       xhr.addEventListener('load', function () {
-  //         resolve(JSON.parse(this.response))
-  //       })
-  //     })
-  //   };
-
-  //   request('http://www.mp4ba.com/rss.php').then(
-  //         function(result){
-  //               console.log(result);
-  //         }
-  //     );
-
-//sj = require('rsj');//RSS as JSON when use it we must (npm install rsj) first
-
-// rsj.r2j('http://www.mp4ba.com/rss.php',function(json) {
-//     var obj = eval('(' + json + ')');//js原生方法
-//     //var obj = JSON.parse(json);//json.js包
-
-
-//     // for(var a =0;a<5;a++){
-//     //     console.log(obj[a]);
-//     // };
-    
-//     firebaseData('rss').push(obj[1]);
-//     //res.render('index', { title: 'testbook',layout:'layout',nav:'index',rssData:obj});
-// });
 
 download(url, function(data) {
   if (data) {
+    console.log(data)
       parseString(data, function (err, result) {
-      firebaseData('rss').push(result);
+      //firebaseData('rss').push(result);
+      console.log(result)
       });
 
   }
@@ -102,35 +54,29 @@ download(url, function(data) {
    console.log("error");
 });
 
-function settime(){
-    var time = new Date();
-    firebaseData('time').push({a:time.toLocaleString()});
-}
+// function settime(){
+//     var time = new Date();
+//     firebaseData('time').push({a:time.toLocaleString()});
+// }
 
-setInterval(settime,600000);
+// setInterval(settime,5000);
 
 app.set('port', (process.env.PORT || 5000));
 
-app.use(express.static(__dirname + '/public'));
-
-// views is directory for all template files
-// app.set('views', __dirname + '/views');
-// app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  // response.send($.html());
-  // console.log($.html());
-  // download(url, function(data) {
-  //     if (data) {
-  //       //response.send(data);
-  //       var $ = cheerio.load(data);
-  //       $('item>title').each(function(){
-  //            console.log($(this).text());
-  //            });
+  download(url, function(data) {
+  if (data) {
+    console.log(data)
+      parseString(data, function (err, result) {
+      //firebaseData('rss').push(result);
+      response.send(result)
+      });
 
-  //     }
-  //     else console.log("error");
-  //   });
+  }
+  else
+   console.log("error");
+});
       
 }
 );
