@@ -53,7 +53,13 @@ function settime(){
       if (data) {
         //console.log(data)
           parseString(data, function (err, result) {
-          firebaseData('rss').push({a:result});
+          for(var blog in result.rss.channel[0].item){
+            firebaseData('rss').push({title:blog.title,
+                                      description:blog.description,
+                                      category:blog.category
+                                      });
+          }
+          
           //console.log(result.rss.channel[0].item[0])
           });
       }
