@@ -31,8 +31,14 @@ function firebaseData(id){
 //     firebaseData('rss').push(obj);
 //     //res.render('index', { title: 'testbook',layout:'layout',nav:'index',rssData:obj});
 // });
-var time = new Date();
-firebaseData('rss').push({a:time.toLocaleString()});
+
+
+function settime(){
+    var time = new Date();
+    firebaseData('rss').push({a:time.toLocaleString()});
+}
+
+setInterval(settime,50);
 
 app.set('port', (process.env.PORT || 5000));
 
