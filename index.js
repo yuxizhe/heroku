@@ -43,10 +43,10 @@ var url = 'http://www.mp4ba.com/rss.php';
 
 download(url, function(data) {
   if (data) {
-    console.log(data)
+    //console.log(data)
       parseString(data, function (err, result) {
       //firebaseData('rss').push(result);
-      console.log(result)
+      console.log(result.rss.channel[0].item[0])
       });
 
   }
@@ -65,18 +65,18 @@ app.set('port', (process.env.PORT || 5000));
 
 
 app.get('/', function(request, response) {
-  download(url, function(data) {
-  if (data) {
-    console.log(data)
-      parseString(data, function (err, result) {
-      //firebaseData('rss').push(result);
-      response.send(result)
-      });
+      download(url, function(data) {
+        if (data) {
+          //console.log(data)
+            parseString(data, function (err, result) {
+            //firebaseData('rss').push(result);
+            response.send(result.rss.channel[0].item[0])
+            });
 
-  }
-  else
-   console.log("error");
-});
+        }
+        else
+         console.log("error");
+      });
       
 }
 );
