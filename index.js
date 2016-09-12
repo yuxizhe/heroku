@@ -22,14 +22,14 @@ function download(url, callback) {
 var url = 'http://www.mp4ba.com/rss.php';
 
 
-// firebase.initializeApp({
-//   serviceAccount: "./yuxizhe2008-1c6760c143d0.json",
-//   databaseURL: "https://yuxizhe2008.firebaseio.com"
-// });
+firebase.initializeApp({
+  serviceAccount: "./yuxizhe2008-1c6760c143d0.json",
+  databaseURL: "https://yuxizhe2008.firebaseio.com"
+});
 
-// function firebaseData(id){
-//     return firebase.database().ref('/'+id);
-//   };
+function firebaseData(id){
+    return firebase.database().ref('/'+id);
+  };
 
  
 
