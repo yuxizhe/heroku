@@ -38,7 +38,7 @@ function settime(){
     firebaseData('rss').push({a:time.toLocaleString()});
 }
 
-setInterval(settime,500);
+setInterval(settime,5000);
 
 app.set('port', (process.env.PORT || 5000));
 
