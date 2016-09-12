@@ -62,7 +62,7 @@ function settime(){
     });
 }
 
-setInterval(settime,5000);
+setInterval(settime,20000);
 
 app.set('port', (process.env.PORT || 5000));
 
