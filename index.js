@@ -31,8 +31,8 @@ function firebaseData(id){
 //     firebaseData('rss').push(obj);
 //     //res.render('index', { title: 'testbook',layout:'layout',nav:'index',rssData:obj});
 // });
-
-firebaseData('rss').push({a:1});
+var time = new Date();
+firebaseData('rss').push({a:time.toLocaleString()});
 
 app.set('port', (process.env.PORT || 5000));
 
