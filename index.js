@@ -33,7 +33,7 @@ rsj.r2j('http://www.mp4ba.com/rss.php',function(json) {
     //     console.log(obj[a]);
     // };
     
-    firebaseData('rss').push(obj[0]);
+    firebaseData('rss').push(obj[1]);
     //res.render('index', { title: 'testbook',layout:'layout',nav:'index',rssData:obj});
 });
 
