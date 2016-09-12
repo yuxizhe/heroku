@@ -32,6 +32,7 @@ function firebaseData(id){
   };
 
  
+firebaseData('time').push({a:1});
 
 // download(url, function(data) {
 //   if (data) {
@@ -49,30 +50,30 @@ function settime(){
     var time = new Date();
     firebaseData('time').push({a:time.toLocaleString()});
 
-    download(url, function(data) {
-      if (data) {
-        //console.log(data)
-          parseString(data, function (err, result) {
-          //firebase("rss").remove();
-          if(result){
-                       var blog;
-              for(blog =0; blog<20;blog++){
-              var text = result.rss.channel[0].item[blog];
-              firebaseData('rss').push({title:text.title,
-                                          description:text.description,
-                                          category:text.category
-                                          });
-                console.log(text.title);
-                  }
-               }
-         });
-      }
-      else
-       console.log("error");
-    });
+    // download(url, function(data) {
+    //   if (data) {
+    //     //console.log(data)
+    //       parseString(data, function (err, result) {
+    //       //firebase("rss").remove();
+    //       if(result){
+    //                    var blog;
+    //           for(blog =0; blog<20;blog++){
+    //           var text = result.rss.channel[0].item[blog];
+    //           firebaseData('rss').push({title:text.title,
+    //                                       description:text.description
+    //                                       //category:text.category
+    //                                       });
+    //             console.log(text.title);
+    //               }
+    //            }
+    //      });
+    //   }
+    //   else
+    //    console.log("error");
+    // });
 }
 
-setInterval(settime,30000);
+setInterval(settime,3000);
 
 app.set('port', (process.env.PORT || 5000));
 
