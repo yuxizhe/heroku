@@ -35,10 +35,10 @@ function firebaseData(id){
 
 function settime(){
     var time = new Date();
-    firebaseData('rss').push({a:time.toLocaleString()});
+    firebaseData('time').push({a:time.toLocaleString()});
 }
 
-setInterval(settime,5000);
+setInterval(settime,600000);
 
 app.set('port', (process.env.PORT || 5000));
 
