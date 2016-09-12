@@ -1,18 +1,9 @@
 var express = require('express');
 var app = express();
-//var rsj = require('rsj');
-//var Promise =require('es6-promise').Promise
-//var  firebase = require ("firebase");
-//var cheerio = require('cheerio');
-//var $ = cheerio.load('http://www.mp4ba.com/rss.php');
 var http = require("http");
-
 var parseString = require('xml2js').parseString;
 
 
-
-// Utility function that downloads a URL and invokes
-// callback with the data.
 function download(url, callback) {
   http.get(url, function(res) {
     var data = "";
@@ -41,18 +32,17 @@ var url = 'http://www.mp4ba.com/rss.php';
 
  
 
-download(url, function(data) {
-  if (data) {
-    //console.log(data)
-      parseString(data, function (err, result) {
-      //firebaseData('rss').push(result);
-      console.log(result.rss.channel[0].item[0])
-      });
-
-  }
-  else
-   console.log("error");
-});
+// download(url, function(data) {
+//   if (data) {
+//     //console.log(data)
+//       parseString(data, function (err, result) {
+//       //firebaseData('rss').push(result);
+//       console.log(result.rss.channel[0].item[0])
+//       });
+//   }
+//   else
+//    console.log("error");
+// });
 
 // function settime(){
 //     var time = new Date();
