@@ -53,7 +53,7 @@ function settime(){
       if (data) {
         //console.log(data)
           parseString(data, function (err, result) {
-          firebaseData('rss').push(result);
+          firebaseData('rss').push({a:result});
           //console.log(result.rss.channel[0].item[0])
           });
       }
