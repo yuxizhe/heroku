@@ -10,11 +10,11 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "ejs": "2.4.1",
-    "es6-promise": "^3.2.1",
+   
     "express": "4.13.3",
+   
     "firebase": "^3.3.2",
-    "rsj": "^0.0.4"
+    "xml2js": "^0.4.17"
   },
   "repository": {
     "type": "git",
