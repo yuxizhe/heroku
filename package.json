@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "4.13.3",
     "firebase": "^3.3.2",
+    "wilddog": "^2.0.4",
     "xml2js": "^0.4.17"
   },
   "repository": {

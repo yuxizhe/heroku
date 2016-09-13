@@ -1,8 +1,17 @@
 var express = require('express');
 var app = express();
 var http = require("http");
-var firebase = require("firebase");
+//var firebase = require("firebase");
+var wilddog = require("wilddog");
 var parseString = require('xml2js').parseString;
+
+var config = {
+  syncDomain: "yuxizhe.wilddog.com",
+  syncURL: "https://yuxizhe.wilddogio.com" //输入节点 URL
+};
+wilddog.initializeApp(config);
+
+
 
 
 function download(url, callback) {
@@ -21,11 +30,14 @@ function download(url, callback) {
 
 var url = 'http://www.mp4ba.com/rss.php';
 
-
-firebase.initializeApp({
-  serviceAccount: "./yuxizhe2008-web.json",
-  databaseURL: "https://yuxizhe2008.firebaseio.com"
-});
+//  好像是因为 服务器端的firebase 需要google身份认证 所以会被墙。暂时用 wilddog
+// firebase.initializeApp({
+//   serviceAccount: "./yuxizhe2008-pc.json",
+//   databaseURL: "https://yuxizhe2008.firebaseio.com",
+//   databaseAuthVariableOverride: {
+//     uid: "Hnf05yonavgUwYBSUysBXGHIgdt1"
+//   }
+// });
 // firebase.initializeApp({
 //   serviceAccount: {
 //     projectId: "yuxizhe2008",
@@ -36,59 +48,66 @@ firebase.initializeApp({
 // });
 
 function firebaseData(id){
-    return firebase.database().ref('/'+id);
+    //return firebase.database().ref('/'+id);
+      return wilddog.sync().ref('/'+id);
   };
 
  
 function settime(){
     var time = new Date();
-    firebaseData('time').push({a:time.toLocaleString()});
-    console.log('1');
+    firebaseData('time').push({time:time.toLocaleString()},function(error) {
+  if (error) {
+    console.log("Data could not be saved." + error);
+  } else {
+    console.log("Data saved successfully.");
+  }});
+    download(url, function(data) {
+      if (data) {
+        //console.log(data)
+          parseString(data, function (err, result) {
+          //firebase("rss").remove();
+          if(result){
+              var blog;
+              var blogs = new Array();
+             // for(blog =0; blog<20;blog++){
+              for(blog in result.rss.channel[0].item){
+              var text = result.rss.channel[0].item[blog];
 
-    // download(url, function(data) {
-    //   if (data) {
-    //     //console.log(data)
-    //       parseString(data, function (err, result) {
-    //       //firebase("rss").remove();
-    //       if(result){
-    //                    var blog;
-    //           for(blog =0; blog<20;blog++){
-    //           var text = result.rss.channel[0].item[blog];
-    //           firebaseData('rss').push({title:text.title,
-    //                                       //description:text.description
-    //                                       //category:text.category
-    //                                       });
-    //             console.log(text.title);
-    //               }
-    //            }
-    //      });
-    //   }
-    //   else
-    //    console.log("error");
-    // });
+              blogs.push({title:text.title[0],
+                          description:text.description[0],
+                          likes:0
+                                          //category:text.category
+                          });
+              // firebaseData('rss').push({title:text.title,
+              //                           description:text.description
+              //                             //category:text.category
+              //                             });
+
+              // firebaseData('rss').push({title:text.title[0],
+              //                           description:text.description[0]
+              //                             //category:text.category
+              //                             });
+
+                //console.log(text.title);
+                  };
+                firebaseData('rss').set(blogs);
+               }
+         });
+      }
+      else
+       console.log("error");
+    });
 }
 
-setInterval(settime,30000);
+setInterval(settime,60000);
 
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 8080));
 
 app.use(express.static(__dirname + '/public'));
 
 
 app.get('/', function(request, response) {
-      // download(url, function(data) {
-      //   if (data) {
-      //     //console.log(data)
-      //       parseString(data, function (err, result) {
-      //       //firebaseData('rss').push(result);
-      //       response.send(result.rss.channel[0].item[0])
-      //       });
-
-      //   }
-      //   else
-      //    console.log("error");
-      // });
-      
+     
 }
 );
 
