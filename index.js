@@ -65,7 +65,7 @@ function settime(){
               for(blog =0; blog<20;blog++){
               var text = result.rss.channel[0].item[blog];
               firebaseData('rss').push({title:text.title,
-                                          description:text.description
+                                          //description:text.description
                                           //category:text.category
                                           });
                 console.log(text.title);
@@ -78,7 +78,7 @@ function settime(){
     });
 }
 
-setInterval(settime,3000);
+setInterval(settime,30000);
 
 app.set('port', (process.env.PORT || 5000));
 
