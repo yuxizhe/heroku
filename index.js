@@ -99,7 +99,7 @@ function settime(){
     });
 }
 
-setInterval(settime,60000);
+setInterval(settime,600000);
 
 app.set('port', (process.env.PORT || 8080));
 
