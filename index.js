@@ -23,7 +23,7 @@ var url = 'http://www.mp4ba.com/rss.php';
 
 
 firebase.initializeApp({
-  serviceAccount: "./yuxizhe2008-1c6760c143d0.json",
+  serviceAccount: "./yuxizhe2008-f0b5f83f53c2.json",
   databaseURL: "https://yuxizhe2008.firebaseio.com"
 });
 
@@ -33,7 +33,11 @@ function firebaseData(id){
 
  
 firebaseData('time').push({a:1});
+console.log("push");
 
+firebaseData('test').on('value',function(re){
+    console.log(re.val())
+});
 // download(url, function(data) {
 //   if (data) {
 //     //console.log(data)
@@ -49,6 +53,7 @@ firebaseData('time').push({a:1});
 function settime(){
     var time = new Date();
     firebaseData('time').push({a:time.toLocaleString()});
+    console.log('1');
 
     // download(url, function(data) {
     //   if (data) {
@@ -73,7 +78,7 @@ function settime(){
     // });
 }
 
-setInterval(settime,600000);
+setInterval(settime,3000);
 
 app.set('port', (process.env.PORT || 5000));
 

@@ -10,7 +10,6 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "ejs": "2.4.1",
     "express": "4.13.3",
     "firebase": "^3.3.2",
     "xml2js": "^0.4.17"
