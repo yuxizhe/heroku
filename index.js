@@ -2,18 +2,36 @@ var express = require('express');
 var app = express();
 var http = require("http");
 var firebase = require("firebase");
-//var wilddog = require("wilddog");
+var wilddog = require("wilddog");
 var parseString = require('xml2js').parseString;
 var os = require("os");
 
+// firebase 0    wilddog 1
+var env = 1;
 
+if(env){
+    var config = {
+      syncDomain: "yuxizhe.wilddog.com",
+      syncURL: "https://yuxizhe.wilddogio.com" //输入节点 URL
+    };
+    wilddog.initializeApp(config);
 
-// var config = {
-//   syncDomain: "yuxizhe.wilddog.com",
-//   syncURL: "https://yuxizhe.wilddogio.com" //输入节点 URL
-// };
-// wilddog.initializeApp(config);
+    function firebaseData(id){
+        // return firebase.database().ref('/'+id);
+        return wilddog.sync().ref('/'+id);
+      };
+}
+else{
+   //好像是因为 服务器端的firebase 需要google身份认证 所以会被墙。暂时用 wilddog
+    firebase.initializeApp({
+      serviceAccount: "./yuxizhe2008-pc.json",
+      databaseURL: "https://yuxizhe2008.firebaseio.com",
+    });
 
+    function firebaseData(id){
+        return firebase.database().ref('/'+id);
+      };
+}
 
 
 
@@ -34,19 +52,7 @@ function download(url, callback) {
 var urlMp4ba = 'http://www.mp4ba.com/rss.php';
 var urlSMZDM = 'http://feed.smzdm.com';
 
- //好像是因为 服务器端的firebase 需要google身份认证 所以会被墙。暂时用 wilddog
-firebase.initializeApp({
-  serviceAccount: "./yuxizhe2008-pc.json",
-  databaseURL: "https://yuxizhe2008.firebaseio.com",
-  // databaseAuthVariableOverride: {
-  //   uid: "Hnf05yonavgUwYBSUysBXGHIgdt1"
-  // }
-});
 
-function firebaseData(id){
-    return firebase.database().ref('/'+id);
-      //return wilddog.sync().ref('/'+id);
-  };
 
 
     var showMem = function() {
@@ -56,8 +62,7 @@ function firebaseData(id){
      };
      console.log('Process: heapTotal '+format(mem.heapTotal) + ' heapUsed ' + format(mem.heapUsed) + ' rss ' + format(mem.rss));
      console.log('----------------------------------------');
-
-};
+    };
 
  
 function settime(){
@@ -117,7 +122,7 @@ function downloadSMZDM() {
                           //category:text.category
                           });
               };
-              firebaseData('SMZDM').update(blogs,function(error) {
+              firebaseData('SMZDM').set(blogs,function(error) {
                   if (error) {
                     console.log("SMZDM could not be saved." + error);
                   } else {
@@ -135,7 +140,7 @@ function downloadSMZDM() {
 settime();
 setInterval(settime,600000);
 downloadSMZDM();
-setTimeout(function(){setInterval(downloadSMZDM,30000)},30000);
+setTimeout(function(){setInterval(downloadSMZDM,300000)},600000);
 
 setInterval(function () {
     download('http://yuxizhe.herokuapp.com',function(){console.log('open website , incase of sleep')})}
