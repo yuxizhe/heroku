@@ -35,9 +35,9 @@ var urlSMZDM = 'http://feed.smzdm.com';
 firebase.initializeApp({
   serviceAccount: "./yuxizhe2008-pc.json",
   databaseURL: "https://yuxizhe2008.firebaseio.com",
-  databaseAuthVariableOverride: {
-    uid: "Hnf05yonavgUwYBSUysBXGHIgdt1"
-  }
+  // databaseAuthVariableOverride: {
+  //   uid: "Hnf05yonavgUwYBSUysBXGHIgdt1"
+  // }
 });
 // firebase.initializeApp({
 //   serviceAccount: {
