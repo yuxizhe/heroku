@@ -127,7 +127,11 @@ function downloadSMZDM() {
 settime();
 setInterval(settime,600000);
 downloadSMZDM();
-setTimeout(function(){setInterval(downloadSMZDM,600000)},300000);
+setTimeout(function(){setInterval(downloadSMZDM,30000)},30000);
+
+setInterval(function () {
+    download('http://yuxizhe.herokuapp.com',function(){console.log('open website , incase of sleep')})}
+    ,1600000);
 
 app.set('port', (process.env.PORT || 8080));
 
