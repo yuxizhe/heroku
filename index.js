@@ -1,15 +1,15 @@
 var express = require('express');
 var app = express();
 var http = require("http");
-//var firebase = require("firebase");
-var wilddog = require("wilddog");
+var firebase = require("firebase");
+//var wilddog = require("wilddog");
 var parseString = require('xml2js').parseString;
 
-var config = {
-  syncDomain: "yuxizhe.wilddog.com",
-  syncURL: "https://yuxizhe.wilddogio.com" //输入节点 URL
-};
-wilddog.initializeApp(config);
+// var config = {
+//   syncDomain: "yuxizhe.wilddog.com",
+//   syncURL: "https://yuxizhe.wilddogio.com" //输入节点 URL
+// };
+// wilddog.initializeApp(config);
 
 
 
@@ -31,14 +31,14 @@ function download(url, callback) {
 var urlMp4ba = 'http://www.mp4ba.com/rss.php';
 var urlSMZDM = 'http://feed.smzdm.com';
 
-//  好像是因为 服务器端的firebase 需要google身份认证 所以会被墙。暂时用 wilddog
-// firebase.initializeApp({
-//   serviceAccount: "./yuxizhe2008-pc.json",
-//   databaseURL: "https://yuxizhe2008.firebaseio.com",
-//   databaseAuthVariableOverride: {
-//     uid: "Hnf05yonavgUwYBSUysBXGHIgdt1"
-//   }
-// });
+ 好像是因为 服务器端的firebase 需要google身份认证 所以会被墙。暂时用 wilddog
+firebase.initializeApp({
+  serviceAccount: "./yuxizhe2008-pc.json",
+  databaseURL: "https://yuxizhe2008.firebaseio.com",
+  databaseAuthVariableOverride: {
+    uid: "Hnf05yonavgUwYBSUysBXGHIgdt1"
+  }
+});
 // firebase.initializeApp({
 //   serviceAccount: {
 //     projectId: "yuxizhe2008",
@@ -49,8 +49,8 @@ var urlSMZDM = 'http://feed.smzdm.com';
 // });
 
 function firebaseData(id){
-    //return firebase.database().ref('/'+id);
-      return wilddog.sync().ref('/'+id);
+    return firebase.database().ref('/'+id);
+      //return wilddog.sync().ref('/'+id);
   };
 
  
