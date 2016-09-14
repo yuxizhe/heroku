@@ -53,6 +53,16 @@ function firebaseData(id){
       //return wilddog.sync().ref('/'+id);
   };
 
+
+    var showMem = function() {
+     var mem = process.memoryUsage();
+     var format = function(bytes) {
+          return (bytes/1024/1024).toFixed(2)+'MB';
+     };
+     console.log('Process: heapTotal '+format(mem.heapTotal) + ' heapUsed ' + format(mem.heapUsed) + ' rss ' + format(mem.rss));
+     console.log('----------------------------------------');
+};
+
  
 function settime(){
     var time = new Date();
@@ -87,6 +97,7 @@ function settime(){
       else
        console.log("error");
     });
+    showMem();
 };
 
 function downloadSMZDM() {
@@ -122,10 +133,11 @@ function downloadSMZDM() {
       else
        console.log("error");
     });
+
 };
 
 settime();
-setInterval(settime,600000);
+setInterval(settime,60000);
 downloadSMZDM();
 setTimeout(function(){setInterval(downloadSMZDM,30000)},30000);
 
