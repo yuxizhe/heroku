@@ -141,7 +141,7 @@ function downloadSMZDM() {
 };
 
 settime();
-setInterval(settime,6000);
+setInterval(settime,600000);
 downloadSMZDM();
 setTimeout(function(){setInterval(downloadSMZDM,30000)},30000);
 
