@@ -5,6 +5,7 @@ var firebase = require("firebase");
 var wilddog = require("wilddog");
 var parseString = require('xml2js').parseString;
 var os = require("os");
+var compression = require('compression');
 
 // firebase 0    wilddog 1
 var env = 1;
@@ -148,6 +149,8 @@ setInterval(function () {
 
 app.set('port', (process.env.PORT || 8080));
 
+//app.use(express.compress());
+app.use(compression());
 app.use(express.static(__dirname + '/public'));
 
 

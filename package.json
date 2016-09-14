@@ -10,6 +10,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "compression": "^1.6.2",
     "express": "4.13.3",
     "firebase": "^3.3.2",
     "wilddog": "^2.0.4",
