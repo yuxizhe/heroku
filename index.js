@@ -28,7 +28,8 @@ function download(url, callback) {
   });
 }
 
-var url = 'http://www.mp4ba.com/rss.php';
+var urlMp4ba = 'http://www.mp4ba.com/rss.php';
+var urlSMZDM = 'http://feed.smzdm.com';
 
 //  好像是因为 服务器端的firebase 需要google身份认证 所以会被墙。暂时用 wilddog
 // firebase.initializeApp({
@@ -56,12 +57,13 @@ function firebaseData(id){
 function settime(){
     var time = new Date();
     firebaseData('time').push({time:time.toLocaleString()},function(error) {
-  if (error) {
-    console.log("Data could not be saved." + error);
-  } else {
-    console.log("Data saved successfully.");
-  }});
-    download(url, function(data) {
+    if (error) {
+      console.log("Data could not be saved." + error);
+    } else {
+      console.log("Data saved successfully.");
+    }});
+    // MP4 
+    download(urlMp4ba, function(data) {
       if (data) {
         //console.log(data)
           parseString(data, function (err, result) {
@@ -69,26 +71,14 @@ function settime(){
           if(result){
               var blog;
               var blogs = new Array();
-             // for(blog =0; blog<20;blog++){
               for(blog in result.rss.channel[0].item){
               var text = result.rss.channel[0].item[blog];
 
               blogs.push({title:text.title[0],
                           description:text.description[0],
-                          likes:0
-                                          //category:text.category
+                          //likes:0
+                          //category:text.category
                           });
-              // firebaseData('rss').push({title:text.title,
-              //                           description:text.description
-              //                             //category:text.category
-              //                             });
-
-              // firebaseData('rss').push({title:text.title[0],
-              //                           description:text.description[0]
-              //                             //category:text.category
-              //                             });
-
-                //console.log(text.title);
                   };
                 firebaseData('rss').set(blogs);
                }
@@ -97,9 +87,47 @@ function settime(){
       else
        console.log("error");
     });
-}
+};
 
+function downloadSMZDM() {
+   // SMZDM 
+    download(urlSMZDM, function(data) {
+      if (data) {
+        //console.log(data)
+          parseString(data, function (err, result) {
+          //firebase("rss").remove();
+          if(result){
+              var blog;
+              var blogs = new Array();
+              for(blog in result.rss.channel[0].item){
+              var text = result.rss.channel[0].item[blog];
+
+              blogs.push({title:text.title[0],
+                          description:text.description[0],
+                          focus_pic:text.focus_pic[0]
+                          //content:text.content[0]
+                          //likes:0
+                          //category:text.category
+                          });
+              };
+              firebaseData('SMZDM').set(blogs,function(error) {
+                  if (error) {
+                    console.log("SMZDM could not be saved." + error);
+                  } else {
+                    console.log("SMZDM saved successfully.");
+                  }});
+            }
+         });
+      }
+      else
+       console.log("error");
+    });
+};
+
+settime();
 setInterval(settime,600000);
+downloadSMZDM();
+setTimeout(function(){setInterval(downloadSMZDM,600000)},300000);
 
 app.set('port', (process.env.PORT || 8080));
 
