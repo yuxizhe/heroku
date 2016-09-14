@@ -31,7 +31,7 @@ function download(url, callback) {
 var urlMp4ba = 'http://www.mp4ba.com/rss.php';
 var urlSMZDM = 'http://feed.smzdm.com';
 
- 好像是因为 服务器端的firebase 需要google身份认证 所以会被墙。暂时用 wilddog
+ //好像是因为 服务器端的firebase 需要google身份认证 所以会被墙。暂时用 wilddog
 firebase.initializeApp({
   serviceAccount: "./yuxizhe2008-pc.json",
   databaseURL: "https://yuxizhe2008.firebaseio.com",
