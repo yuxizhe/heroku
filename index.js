@@ -65,17 +65,6 @@ function firebaseData(id){
      console.log('Process: heapTotal '+format(mem.heapTotal) + ' heapUsed ' + format(mem.heapUsed) + ' rss ' + format(mem.rss));
      console.log('----------------------------------------');
 
-      console.log(os.cpus());
-
-      console.log('cpu load:'+ os.loadavg());
-
-      // 系统内存总量
-      console.log('total memory : ' + os.totalmem()/1024/1024 + " MB.");
-
-      // 操作系统空闲内存量
-      console.log('free memory : ' + os.freemem()/1024/1024 + " MB.");
-
-
 };
 
  
@@ -152,7 +141,7 @@ function downloadSMZDM() {
 };
 
 settime();
-setInterval(settime,60000);
+setInterval(settime,6000);
 downloadSMZDM();
 setTimeout(function(){setInterval(downloadSMZDM,30000)},30000);
 
