@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var http = require("http");
-var firebase = require("firebase");
+//var firebase = require("firebase");
 var wilddog = require("wilddog");
 var parseString = require('xml2js').parseString;
 var os = require("os");
@@ -88,7 +88,7 @@ function settime() {
 
                         blogs.push({
                             title: text.title[0],
-                            description: text.description[0],
+                            //description: text.description[0],
                             //likes:0
                             //category:text.category
                         });
