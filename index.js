@@ -23,14 +23,14 @@ if (env) {
     };
 } else {
     //好像是因为 服务器端的firebase 需要google身份认证 所以会被墙。暂时用 wilddog
-    //    firebase.initializeApp({
-    //     serviceAccount: "./yuxizhe2008-pc.json",
-    //     databaseURL: "https://yuxizhe2008.firebaseio.com",
-    // });
+    // firebase.initializeApp({
+ //     serviceAccount: "./yuxizhe2008-pc.json",
+ //     databaseURL: "https://yuxizhe2008.firebaseio.com",
+ // });
 
-    // function firebaseData(id) {
-    //     return firebase.database().ref('/' + id);
-    // };
+ // function firebaseData(id) {
+ //     return firebase.database().ref('/' + id);
+ // };
 
 }
 
@@ -149,17 +149,18 @@ setTimeout(function() { setInterval(downloadSMZDM, 300000) }, 600000);
 //     download('http://yuxizhe.herokuapp.com',function(){console.log('open website , incase of sleep')})}
 //     ,1600000);
 
-app.set('port', (process.env.PORT || 8080);
+app.set('port', (process.env.PORT || 8080));
 
-        //app.use(express.compress());
-        app.use(compression()); app.use(express.static(__dirname + '/public'));
-
-
-        app.get('/', function(request, response) {
-
-        });
+//app.use(express.compress());
+app.use(compression());
+app.use(express.static(__dirname + '/public'));
 
 
-        app.listen(app.get('port'), function() {
-            console.log('Node app is running on port', app.get('port'));
-        });
+app.get('/', function(request, response) {
+
+});
+
+
+app.listen(app.get('port'), function() {
+    console.log('Node app is running on port', app.get('port'));
+});
