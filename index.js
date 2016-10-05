@@ -24,13 +24,13 @@ if (env) {
 } else {
     //好像是因为 服务器端的firebase 需要google身份认证 所以会被墙。暂时用 wilddog
     // firebase.initializeApp({
- //     serviceAccount: "./yuxizhe2008-pc.json",
- //     databaseURL: "https://yuxizhe2008.firebaseio.com",
- // });
+    //     serviceAccount: "./yuxizhe2008-pc.json",
+    //     databaseURL: "https://yuxizhe2008.firebaseio.com",
+    // });
 
- // function firebaseData(id) {
- //     return firebase.database().ref('/' + id);
- // };
+    // function firebaseData(id) {
+    //     return firebase.database().ref('/' + id);
+    // };
 
 }
 
@@ -145,9 +145,9 @@ setInterval(settime, 600000);
 downloadSMZDM();
 setTimeout(function() { setInterval(downloadSMZDM, 300000) }, 600000);
 
-// setInterval(function () {
-//     download('http://yuxizhe.herokuapp.com',function(){console.log('open website , incase of sleep')})}
-//     ,1600000);
+setInterval(function() {
+    download('http://yuxizhe-winds.daoapp.io', function() { console.log('open website , incase of sleep') })
+}, 1600000);
 
 app.set('port', (process.env.PORT || 8080));
 
