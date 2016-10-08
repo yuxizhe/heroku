@@ -1,50 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-   <title>寓悦家居</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>寓悦家居</title>
     <!-- 新 Bootstrap 核心 CSS 文件 -->
-	<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-
-	<link href="theme.css" rel="stylesheet">
-	<!-- 可选的Bootstrap主题文件（一般不使用） -->
-	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap-theme.min.css"></script>
-
-	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
-
-	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-	<script src="masonry.js"></script>
-	<style type="text/css">
-    
-    .pin{
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="theme.css" rel="stylesheet">
+    <!-- 可选的Bootstrap主题文件（一般不使用） -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap-theme.min.css"></script>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="masonry.js"></script>
+    <style type="text/css">
+    .pin {
         padding: 15px 0 0 15px;
-        float:left;
+        float: left;
     }
-    .box{
+    
+    .box {
         padding: 10px;
-        border:1px solid #ccc;
+        border: 1px solid #ccc;
         box-shadow: 0 0 6px #ccc;
         border-radius: 5px;
-     
-      
-      
     }
-    .box img{
-        width:280px;
-        height:auto;
-
+    
+    .box img {
+        width: 280px;
+        height: auto;
     }
-</style>
+    </style>
 </head>
-<script >
-
-window.onload=function(){
-		$('.dropdown-menu-digital-pet').hide();
-		$('.dropdown-menu-animal-pet').hide();
-		$('.dropdown-menu-rad').hide();
+<script>
+window.onload = function() {
+    $('.dropdown-menu-digital-pet').hide();
+    $('.dropdown-menu-animal-pet').hide();
+    $('.dropdown-menu-rad').hide();
 
 }
 
@@ -54,238 +48,226 @@ window.onload=function(){
 jQuery(document).ready(function($) {
 
 
-	$('.dropdown-toggle-rad').click(function(){
-		$('.dropdown-menu-digital-pet').hide();
-		$('.dropdown-menu-animal-pet').hide();
-		$('.dropdown-menu-rad').slideToggle(250);
-	})
+    $('.dropdown-toggle-rad').click(function() {
+        $('.dropdown-menu-digital-pet').hide();
+        $('.dropdown-menu-animal-pet').hide();
+        $('.dropdown-menu-rad').slideToggle(250);
+    })
 
-	$('.dropdown-toggle-digital-pet').click(function(){
-		$('.dropdown-menu-animal-pet').hide();
-		$('.dropdown-menu-rad').hide();
-		$('.dropdown-menu-digital-pet').slideToggle(250);
-	})
+    $('.dropdown-toggle-digital-pet').click(function() {
+        $('.dropdown-menu-animal-pet').hide();
+        $('.dropdown-menu-rad').hide();
+        $('.dropdown-menu-digital-pet').slideToggle(250);
+    })
 
-	$('.dropdown-toggle-animal-pet').click(function(){
-		$('.dropdown-menu-digital-pet').hide();
-		$('.dropdown-menu-rad').hide();
-		$('.dropdown-menu-animal-pet').slideToggle(250);
-	})
+    $('.dropdown-toggle-animal-pet').click(function() {
+        $('.dropdown-menu-digital-pet').hide();
+        $('.dropdown-menu-rad').hide();
+        $('.dropdown-menu-animal-pet').slideToggle(250);
+    })
 
-	$(function(){  
-	  $('.main').masonry({  
-	    // options  
-	    itemSelector : '.pin',  
-	    columnWidth :5
-	  });  
-	});
+    $(function() {
+        $('.main').masonry({
+            // options  
+            itemSelector: '.pin',
+            columnWidth: 5
+        });
+    });
 
-$('img').load(function(){   
-      $('.main').masonry({  
-	    itemSelector : '.pin',  
-	    columnWidth :5
-	  });  
-	});
-
-
+    $('img').load(function() {
+        $('.main').masonry({
+            itemSelector: '.pin',
+            columnWidth: 5
+        });
+    });
 
 
-	
+
+
+
 });
-
-
 </script>
+
 <body>
-	<div class="navbar navbar-default yamm" role="navigation">
-		<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-
-			<a class="navbar-brand" href="index.html">
-				<img src="pic/logo1.png" class="image-logo" alt="寓悦家居">
-			</a>
-		</div>
-		<div id="navbar-collapse-grid" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="about.html" class="page-about">走进寓悦</a></li>
-				
-				<li><a href="" class="dropdown-toggle-digital-pet page-digital-pet" data-toggle="dropdown">海量家居图<b class="caret"></b></a></li>
-				
-				<li><a href="" class="dropdown-toggle-rad page-rad" data-toggle="dropdown">专业参谋 <b class="caret"></b></a></li>
-				<li><a href="" class="dropdown-toggle-animal-pet page-animal-pet" data-toggle="dropdown">美物随心购 <b class="caret"></b></a></li>
-				<li><a href="" class="page-news">新闻中心</a></li>
-				<li><a href="" class="page-contact">联系我们</a></li>
-			</ul>
-			
-		</div><!--/.nav-collapse -->
-		</div>
-	</div>
-
-<div class="dropdown-menu-digital-pet">
-	<div class="container">
-		<div class="row text-center">
-            <div class="col-md-2 col-md-offset-1 col-xs-4">
-    			<a href="keting.html"><img src="pic/keting/20151029_a7b843eaf813575fd19elzypjs6cfjy5_284.jpg" class="img-thumbnail"></a><br>客厅
-    		</div>
-    		<div class="col-md-2 col-xs-4 ">
-    			<a href="woshi.html"><img src="pic/woshi/20.jpg" class="img-thumbnail"></a><br>卧室
-    		</div>
-    		<div class="col-md-2 col-xs-4">
-    			<a href="canting.html"><img src="pic/canting/13.jpg " class="img-thumbnail"></a><br>餐厅
-    		</div>
-    		<div class="col-md-2 col-xs-4">
-    			<a href="chufang.html"><img src="pic/chufang/1.jpg" class="img-thumbnail"></a><br>厨房
-    		</div>
-    		<div class="col-md-2 col-xs-4">
-    			<a href="weishengjian.html"><img src="pic/weishengjian/37.jpg" class="img-thumbnail"></a><br>卫生间	
-    		</div>
-    		
-    	</div>
-    	
-    	
-    </div>
-</div>
-
-<div class="dropdown-menu-animal-pet">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-3 col-md-offset-2 col-xs-4">
-                <a href=""><img src="http://pic.to8to.com/tumall/2015/09/22/6a3c5f3eb3c4de7bd08ac22ddb450bc4.jpg" class="img-thumbnail"></a> 家具市场
+    <div class="navbar navbar-default yamm" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="pic/logo1.png" class="image-logo" alt="寓悦家居">
+                </a>
             </div>
-            <div class="col-md-5">
-              
+            <div id="navbar-collapse-grid" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="about.html" class="page-about">走进寓悦</a></li>
+                    <li><a href="" class="dropdown-toggle-digital-pet page-digital-pet" data-toggle="dropdown">海量家居图<b class="caret"></b></a></li>
+                    <li><a href="" class="dropdown-toggle-rad page-rad" data-toggle="dropdown">专业参谋 <b class="caret"></b></a></li>
+                    <li><a href="" class="dropdown-toggle-animal-pet page-animal-pet" data-toggle="dropdown">美物随心购 <b class="caret"></b></a></li>
+                    <li><a href="" class="page-news">新闻中心</a></li>
+                    <li><a href="" class="page-contact">联系我们</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+    <div class="dropdown-menu-digital-pet">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-2 col-md-offset-1 col-xs-4">
+                    <a href="keting.html"><img src="pic/keting/20151029_a7b843eaf813575fd19elzypjs6cfjy5_284.jpg" class="img-thumbnail"></a>
+                    <br>客厅
+                </div>
+                <div class="col-md-2 col-xs-4 ">
+                    <a href="woshi.html"><img src="pic/woshi/20.jpg" class="img-thumbnail"></a>
+                    <br>卧室
+                </div>
+                <div class="col-md-2 col-xs-4">
+                    <a href="canting.html"><img src="pic/canting/13.jpg " class="img-thumbnail"></a>
+                    <br>餐厅
+                </div>
+                <div class="col-md-2 col-xs-4">
+                    <a href="chufang.html"><img src="pic/chufang/1.jpg" class="img-thumbnail"></a>
+                    <br>厨房
+                </div>
+                <div class="col-md-2 col-xs-4">
+                    <a href="weishengjian.html"><img src="pic/weishengjian/37.jpg" class="img-thumbnail"></a>
+                    <br>卫生间
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<div class="dropdown-menu-rad">
-	<div class="container">
-		<div class="row text-center">
-    		<div class="col-md-3 col-xs-4">
-    			<a href=""><img src="pic/3_1_1.jpg" class="img-thumbnail"></a><br>专业验房<br>
-    		</div>
-    		<div class="col-md-3 col-xs-4">
-    			<a href=""><img src="pic/3_1_2.jpg" class="img-thumbnail"></a><br>房屋设计<br>
-    		</div>
-    		<div class="col-md-3 col-xs-4">
-    			<a href=""><img src="pic/3_1_3.jpg" class="img-thumbnail"></a><br>装修保障<br>
-    		</div>
-    		<div class="col-md-3 col-xs-4">
-    			<a href=""><img src="pic/3_1_4.jpg" class="img-thumbnail"></a><br>装修贷款<br>
-    		</div>
-           
-    	</div>
+    <div class="dropdown-menu-animal-pet">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-md-offset-2 col-xs-4">
+                    <a href="index.html"><img src="http://pic.to8to.com/tumall/2015/09/22/6a3c5f3eb3c4de7bd08ac22ddb450bc4.jpg" class="img-thumbnail"></a> 家具市场
+                </div>
+                <div class="col-md-5">
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-
-
-
-<div class="main">
-<div class="pin">
-	<div class="box"><img src="pic/canting/1.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/2.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/3.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/4.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/5.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/6.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/7.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/8.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/9.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/10.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/11.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/12.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/13.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/14.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/15.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/16.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/17.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/18.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/19.jpg" alt=""></div>
-</div>
-<div class="pin">
-	<div class="box"><img src="pic/canting/20.jpg" alt=""></div>
-</div>
-
-</div>
-
-
-<div class="footer" style="background:#666">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-sm-3 col-xs-6">
-				<ul>
-					<li>中国上海市徐汇区</li>
-					<li>Tel：18516635898</li>
-					
-					<li>Email：yuxizhe2008@163.com</a></li>
-				</ul>
-				
-			</div>
-			<div class="col-md-6 col-sm-3 col-xs-6 text-right">
-				<p>© copyright 2000-2015 于希哲<br></p>
-				<p><span id="sponsor">由 希哲 </a>设计开发</span></p>
-			</div>
-		</div>
-	</div>
-
-	 <!-- 新 Bootstrap 核心 CSS 文件 -->
-	<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-
-	<!-- 可选的Bootstrap主题文件（一般不使用） -->
-	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap-theme.min.css"></script>
-
-	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
-
-	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-
-</div>
-
-
-
+    <div class="dropdown-menu-rad">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-xs-4">
+                    <a href="index.html"><img src="pic/3_1_1.jpg" class="img-thumbnail"></a>
+                    <br>专业验房
+                    <br>
+                </div>
+                <div class="col-md-3 col-xs-4">
+                    <a href="index.html"><img src="pic/3_1_2.jpg" class="img-thumbnail"></a>
+                    <br>房屋设计
+                    <br>
+                </div>
+                <div class="col-md-3 col-xs-4">
+                    <a href="index.html"><img src="pic/3_1_3.jpg" class="img-thumbnail"></a>
+                    <br>装修保障
+                    <br>
+                </div>
+                <div class="col-md-3 col-xs-4">
+                    <a href="index.html"><img src="pic/3_1_4.jpg" class="img-thumbnail"></a>
+                    <br>装修贷款
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="pin">
+            <div class="box"><img src="pic/canting/1.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/2.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/3.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/4.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/5.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/6.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/7.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/8.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/9.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/10.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/11.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/12.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/13.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/14.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/15.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/16.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/17.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/18.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/19.jpg" alt=""></div>
+        </div>
+        <div class="pin">
+            <div class="box"><img src="pic/canting/20.jpg" alt=""></div>
+        </div>
+    </div>
+    <div class="footer" style="background:#666">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-3 col-xs-6">
+                    <ul>
+                        <li>中国上海市徐汇区</li>
+                        <li>Tel：18516635898</li>
+                        <li>Email：yuxizhe2008@163.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-sm-3 col-xs-6 text-right">
+                    <p>© copyright 2000-2015 于希哲
+                        <br>
+                    </p>
+                    <p><span id="sponsor">由 希哲 </a>设计开发</span></p>
+                </div>
+            </div>
+        </div>
+        <!-- 新 Bootstrap 核心 CSS 文件 -->
+        <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+        <!-- 可选的Bootstrap主题文件（一般不使用） -->
+        <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap-theme.min.css"></script>
+        <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+        <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+        <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+        <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    </div>
 </body>
-</html>
 
+</html>
