@@ -5,15 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>寓悦家居</title>
-    <!-- 新 Bootstrap 核心 CSS 文件 -->
-    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="theme.css" rel="stylesheet">
-    <!-- 可选的Bootstrap主题文件（一般不使用） -->
-    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap-theme.min.css"></script>
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="masonry.js"></script>
     <style type="text/css">
     .pin {
@@ -34,59 +26,6 @@
     }
     </style>
 </head>
-<script>
-window.onload = function() {
-    $('.dropdown-menu-digital-pet').hide();
-    $('.dropdown-menu-animal-pet').hide();
-    $('.dropdown-menu-rad').hide();
-
-}
-
-
-
-
-jQuery(document).ready(function($) {
-
-
-    $('.dropdown-toggle-rad').click(function() {
-        $('.dropdown-menu-digital-pet').hide();
-        $('.dropdown-menu-animal-pet').hide();
-        $('.dropdown-menu-rad').slideToggle(250);
-    })
-
-    $('.dropdown-toggle-digital-pet').click(function() {
-        $('.dropdown-menu-animal-pet').hide();
-        $('.dropdown-menu-rad').hide();
-        $('.dropdown-menu-digital-pet').slideToggle(250);
-    })
-
-    $('.dropdown-toggle-animal-pet').click(function() {
-        $('.dropdown-menu-digital-pet').hide();
-        $('.dropdown-menu-rad').hide();
-        $('.dropdown-menu-animal-pet').slideToggle(250);
-    })
-
-    $(function() {
-        $('.main').masonry({
-            // options  
-            itemSelector: '.pin',
-            columnWidth: 5
-        });
-    });
-
-    $('img').load(function() {
-        $('.main').masonry({
-            itemSelector: '.pin',
-            columnWidth: 5
-        });
-    });
-
-
-
-
-
-});
-</script>
 
 <body>
     <div class="navbar navbar-default yamm" role="navigation">
@@ -267,6 +206,59 @@ jQuery(document).ready(function($) {
         <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
         <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
         <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script>
+        window.onload = function() {
+            $('.dropdown-menu-digital-pet').hide();
+            $('.dropdown-menu-animal-pet').hide();
+            $('.dropdown-menu-rad').hide();
+
+        }
+
+
+
+
+        jQuery(document).ready(function($) {
+
+
+            $('.dropdown-toggle-rad').click(function() {
+                $('.dropdown-menu-digital-pet').hide();
+                $('.dropdown-menu-animal-pet').hide();
+                $('.dropdown-menu-rad').slideToggle(250);
+            })
+
+            $('.dropdown-toggle-digital-pet').click(function() {
+                $('.dropdown-menu-animal-pet').hide();
+                $('.dropdown-menu-rad').hide();
+                $('.dropdown-menu-digital-pet').slideToggle(250);
+            })
+
+            $('.dropdown-toggle-animal-pet').click(function() {
+                $('.dropdown-menu-digital-pet').hide();
+                $('.dropdown-menu-rad').hide();
+                $('.dropdown-menu-animal-pet').slideToggle(250);
+            })
+
+            $(function() {
+                $('.main').masonry({
+                    // options  
+                    itemSelector: '.pin',
+                    columnWidth: 5
+                });
+            });
+
+            $('img').load(function() {
+                $('.main').masonry({
+                    itemSelector: '.pin',
+                    columnWidth: 5
+                });
+            });
+
+
+
+
+
+        });
+        </script>
     </div>
 </body>
 

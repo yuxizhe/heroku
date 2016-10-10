@@ -1,319 +1,294 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-   <title>寓悦家居</title>
-    <!-- 新 Bootstrap 核心 CSS 文件 -->
-	<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-
-	<link href="theme.css" rel="stylesheet">
-	<!-- 可选的Bootstrap主题文件（一般不使用） -->
-	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap-theme.min.css"></script>
-
-	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
-
-	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>寓悦家居</title>
+    <link href="theme.css" rel="stylesheet">
+    <script src="masonry.js"></script>
 </head>
-<script>
 
-window.onload=function(){
-		$('.dropdown-menu-digital-pet').hide();
-		$('.dropdown-menu-animal-pet').hide();
-		$('.dropdown-menu-rad').hide();
-
-}
-
-
-jQuery(document).ready(function($) {
-
-
-	$('.dropdown-toggle-rad').click(function(){
-		$('.dropdown-menu-digital-pet').hide();
-		$('.dropdown-menu-animal-pet').hide();
-		$('.dropdown-menu-rad').slideToggle(250);
-	})
-
-	$('.dropdown-toggle-digital-pet').click(function(){
-		$('.dropdown-menu-animal-pet').hide();
-		$('.dropdown-menu-rad').hide();
-		$('.dropdown-menu-digital-pet').slideToggle(250);
-	})
-
-	$('.dropdown-toggle-animal-pet').click(function(){
-		$('.dropdown-menu-digital-pet').hide();
-		$('.dropdown-menu-rad').hide();
-		$('.dropdown-menu-animal-pet').slideToggle(250);
-	})
-
-
-	// flexslider for homepage
-	$('#slider').flexslider({
-		animation: "fade",
-		controlNav: true,
-		directionNav: false,
-		animationLoop: false,
-		slideshow: false,
-	});
-
-
-
-
-
-	
-});
-
-
-</script>
 <body>
-
-	<div class="navbar navbar-default yamm" role="navigation">
-		<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-
-			<a class="navbar-brand" href="index.html">
-				<img src="pic/logo1.png" class="image-logo" alt="寓悦家居">
-			</a>
-		</div>
-		<div id="navbar-collapse-grid" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="about.html" class="page-about">走进寓悦</a></li>
-				
-				<li><a href="" class="dropdown-toggle-digital-pet page-digital-pet" data-toggle="dropdown">海量家居图<b class="caret"></b></a></li>
-				
-				<li><a href="" class="dropdown-toggle-rad page-rad" data-toggle="dropdown">专业参谋 <b class="caret"></b></a></li>
-				<li><a href="" class="dropdown-toggle-animal-pet page-animal-pet" data-toggle="dropdown">美物随心购 <b class="caret"></b></a></li>
-				<li><a href="" class="page-news">新闻中心</a></li>
-				<li><a href="" class="page-contact">联系我们</a></li>
-			</ul>
-			
-		</div><!--/.nav-collapse -->
-		</div>
-	</div>
-
-<div class="dropdown-menu-digital-pet">
-	<div class="container">
-		<div class="row text-center">
-            <div class="col-md-2 col-md-offset-1 col-xs-4">
-    			<a href="keting.html"><img src="pic/keting/20151029_a7b843eaf813575fd19elzypjs6cfjy5_284.jpg" class="img-thumbnail"></a><br>客厅
-    		</div>
-    		<div class="col-md-2 col-xs-4 ">
-    			<a href="woshi.html"><img src="pic/woshi/20.jpg" class="img-thumbnail"></a><br>卧室
-    		</div>
-    		<div class="col-md-2 col-xs-4">
-    			<a href="canting.html"><img src="pic/canting/13.jpg " class="img-thumbnail"></a><br>餐厅
-    		</div>
-    		<div class="col-md-2 col-xs-4">
-    			<a href="chufang.html"><img src="pic/chufang/1.jpg" class="img-thumbnail"></a><br>厨房
-    		</div>
-    		<div class="col-md-2 col-xs-4">
-    			<a href="weishengjian.html"><img src="pic/weishengjian/37.jpg" class="img-thumbnail"></a><br>卫生间	
-    		</div>
-    		
-    	</div>
-    	
-    	
-    </div>
-</div>
-
-<div class="dropdown-menu-animal-pet">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-3 col-md-offset-2 col-xs-4">
-                <a href="index.html"><img src="http://pic.to8to.com/tumall/2015/09/22/6a3c5f3eb3c4de7bd08ac22ddb450bc4.jpg" class="img-thumbnail"></a> 家具市场
+    <div class="navbar navbar-default yamm" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="pic/logo1.png" class="image-logo" alt="寓悦家居">
+                </a>
             </div>
-            <div class="col-md-5">
+            <div id="navbar-collapse-grid" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="about.html" class="page-about">走进寓悦</a></li>
+                    <li><a href="" class="dropdown-toggle-digital-pet page-digital-pet" data-toggle="dropdown">海量家居图<b class="caret"></b></a></li>
+                    <li><a href="" class="dropdown-toggle-rad page-rad" data-toggle="dropdown">专业参谋 <b class="caret"></b></a></li>
+                    <li><a href="" class="dropdown-toggle-animal-pet page-animal-pet" data-toggle="dropdown">美物随心购 <b class="caret"></b></a></li>
+                    <li><a href="" class="page-news">新闻中心</a></li>
+                    <li><a href="" class="page-contact">联系我们</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+    <div class="dropdown-menu-digital-pet">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-2 col-md-offset-1 col-xs-4">
+                    <a href="keting.html"><img src="pic/keting/20151029_a7b843eaf813575fd19elzypjs6cfjy5_284.jpg" class="img-thumbnail"></a>
+                    <br>客厅
+                </div>
+                <div class="col-md-2 col-xs-4 ">
+                    <a href="woshi.html"><img src="pic/woshi/20.jpg" class="img-thumbnail"></a>
+                    <br>卧室
+                </div>
+                <div class="col-md-2 col-xs-4">
+                    <a href="canting.html"><img src="pic/canting/13.jpg " class="img-thumbnail"></a>
+                    <br>餐厅
+                </div>
+                <div class="col-md-2 col-xs-4">
+                    <a href="chufang.html"><img src="pic/chufang/1.jpg" class="img-thumbnail"></a>
+                    <br>厨房
+                </div>
+                <div class="col-md-2 col-xs-4">
+                    <a href="weishengjian.html"><img src="pic/weishengjian/37.jpg" class="img-thumbnail"></a>
+                    <br>卫生间
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="dropdown-menu-rad">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-3 col-xs-4">
-                <a href="index.html"><img src="pic/3_1_1.jpg" class="img-thumbnail"></a>
-                <br>专业验房
-                <br>
-            </div>
-            <div class="col-md-3 col-xs-4">
-                <a href="index.html"><img src="pic/3_1_2.jpg" class="img-thumbnail"></a>
-                <br>房屋设计
-                <br>
-            </div>
-            <div class="col-md-3 col-xs-4">
-                <a href="index.html"><img src="pic/3_1_3.jpg" class="img-thumbnail"></a>
-                <br>装修保障
-                <br>
-            </div>
-            <div class="col-md-3 col-xs-4">
-                <a href="index.html"><img src="pic/3_1_4.jpg" class="img-thumbnail"></a>
-                <br>装修贷款
-                <br>
+    <div class="dropdown-menu-animal-pet">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-md-offset-2 col-xs-4">
+                    <a href="index.html"><img src="http://pic.to8to.com/tumall/2015/09/22/6a3c5f3eb3c4de7bd08ac22ddb450bc4.jpg" class="img-thumbnail"></a> 家具市场
+                </div>
+                <div class="col-md-5">
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<div id="about-bg-cn" class="hidden-xs">
-	
-</div>
-
-<div class="page-content" id="page-about">
-	<div class="container">
-		<p class="text-center">
-			<img src="pic/building.png" style=" margin-top: -170px; margin-bottom: 50px;" class="img-responsive">
-		</p>
-		<p class="text-center visible-xs-block">
-			<img src="pic/building.png" style=" margin-top: 60px; margin-bottom: 20px;" class="img-responsive">
-		</p>
-		<p>浙江永强集团股份有限公司是亚洲最大的休闲家具开发制造商，专业从事休闲产品设计研发、生产和销售。永强集团也是国内首家在A股上市的户外休闲家具企业。目前永强集团拥有六家境内全资子公司、永强国际等三家境外子公司。2013年，集团实现年销售额30亿。永强集团的产品远销全球195个国家，渠道遍及全球各地。永强集团和全球主要的零售商都建立了长期合作关系，包括著名的沃尔玛、家乐福、塔吉特、家得宝、宜家、欧尚和星巴克等主要客户。 
-		</p>
-<p>上海优享家居有限公司是永强集团旗下的全资子公司， 负责永强集团在全球自有品牌及电子商务业务，旗下拥有德国百年品牌MWH、Royal Garden等品牌，其中MWH品牌是欧洲最大的休闲家居品牌之一。热忱欢迎各位优秀人才的加盟！</p>
-        <p>&nbsp;</p>
-        
-	</div>
-	<div id="section-history">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-2">
-					<h2>1995</h2>
-					<hr class="hr-sm">
-					<p>
-						<strong>7月</strong><br>
-						注册成立台州永强工艺品有限公司。
-					</p>
-				</div>
-				<div class="col-md-2">
-					<h2>2000</h2>
-					<hr class="hr-sm">
-					<p>
-						<strong>2月</strong><br>
-						公司总经理谢建勇当选为台州市第二届人大代表。
-					</p>
-					<p>
-						<strong>9月</strong><br>
-						台州永强工艺品有限公司设立遮阳厂，专门生产铝制和木制太阳伞系列产品。
-					</p>
-					
-				</div>
-				<div class="col-md-2">
-					<h2>2005</h2>
-					<hr class="hr-sm">
-					<p>
-						<strong>12月</strong><br>
-						集团出口销售首次超亿美元，成为临海市首家出口超亿美元的企业。
-					</p>
-				</div>
-				<div class="col-md-2">
-					<h2>2007</h2>
-					<hr class="hr-sm">
-					<p>
-						<strong>6月</strong><br>
-						浙江永强集团有限公司正式更名为浙江永强集团股份有限公司。
-					</p>
-					<p>
-						<strong>12月</strong><br>
-						公司的伞/蓬/家具被认定为浙江省名牌产品。
-					</p>
-				</div>
-				<div class="col-md-2">
-					<h2>2012</h2>
-					<hr class="hr-sm">
-					<p>
-						<strong>4月</strong><br>
-						来自毛里求斯、萨摩亚、美国、加拿大等20多个国家的驻华使领馆官员在台州市副秘书长葛昌选等有关领导的陪同下，参观考察永强集团，副总谢建平向驻华使领馆官员们做了详细的介绍。
-					</p>
-					<p>
-						<strong>5月</strong><br>
-						浙江省经信委主任谢力群等人构成的企业调研组莅临永强集团，集团董事长兼总经理谢建勇就行业前景和企业经济运行等情况展开了交流。
-					</p>
-					<p>
-						<strong>10月</strong><br>
-						永强集团户外实验室与BV国际检验集团顺利签约。
-					</p>
-				</div>
-				<div class="col-md-2">
-					<h2>2014</h2>
-					<hr class="hr-sm">
-					<p>
-						<strong>6月</strong><br>
-						在商务部中国对外经济贸易统计学会公布的2012年《中国民营进出口额500强企业排名》和《中国民营外贸500强企业排名》中，永强集团双双入围，分别位列第179位和第88位，是目前户外休闲用品行业中唯一获此殊荣的企业。
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="container text-center hidden-xs" style="margin: 90px auto 50px;">
-        <p>
-        	<img src="pic/value-cn.jpg">
-        </p>
-        <div class="row">
-        	<div class="col-md-1">
-        		
-        	</div>
-        	<div class="col-md-2">
-        		<p><span style="font-size: 13px;">Visualize the invisible,Envision the future</span><br>形其未见，成其未来</p>
-        	</div>
-        	<div class="col-md-2">
-        		<p><br>尽一切可能成就用户</p>
-        	</div>
-        	<div class="col-md-2">
-        		<p><br>激情　梦想　勇气　责任</p>
-        	</div>
-        	<div class="col-md-2">
-        		<p>
-        			以挣扎求创新<br>
-					以创新求发展<br>
-					以发展求支持<br>
-					以支持求卓越
-				</p>
-        	</div>
+    <div class="dropdown-menu-rad">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-xs-4">
+                    <a href="index.html"><img src="pic/3_1_1.jpg" class="img-thumbnail"></a>
+                    <br>专业验房
+                    <br>
+                </div>
+                <div class="col-md-3 col-xs-4">
+                    <a href="index.html"><img src="pic/3_1_2.jpg" class="img-thumbnail"></a>
+                    <br>房屋设计
+                    <br>
+                </div>
+                <div class="col-md-3 col-xs-4">
+                    <a href="index.html"><img src="pic/3_1_3.jpg" class="img-thumbnail"></a>
+                    <br>装修保障
+                    <br>
+                </div>
+                <div class="col-md-3 col-xs-4">
+                    <a href="index.html"><img src="pic/3_1_4.jpg" class="img-thumbnail"></a>
+                    <br>装修贷款
+                    <br>
+                </div>
+            </div>
         </div>
-	</div>
-</div>
+    </div>
+    <div id="about-bg-cn" class="hidden-xs">
+    </div>
+    <div class="page-content" id="page-about">
+        <div class="container">
+            <p class="text-center">
+                <img src="pic/building.png" style=" margin-top: -170px; margin-bottom: 50px;" class="img-responsive">
+            </p>
+            <p class="text-center visible-xs-block">
+                <img src="pic/building.png" style=" margin-top: 60px; margin-bottom: 20px;" class="img-responsive">
+            </p>
+            <p>浙江永强集团股份有限公司是亚洲最大的休闲家具开发制造商，专业从事休闲产品设计研发、生产和销售。永强集团也是国内首家在A股上市的户外休闲家具企业。目前永强集团拥有六家境内全资子公司、永强国际等三家境外子公司。2013年，集团实现年销售额30亿。永强集团的产品远销全球195个国家，渠道遍及全球各地。永强集团和全球主要的零售商都建立了长期合作关系，包括著名的沃尔玛、家乐福、塔吉特、家得宝、宜家、欧尚和星巴克等主要客户。
+            </p>
+            <p>上海优享家居有限公司是永强集团旗下的全资子公司， 负责永强集团在全球自有品牌及电子商务业务，旗下拥有德国百年品牌MWH、Royal Garden等品牌，其中MWH品牌是欧洲最大的休闲家居品牌之一。热忱欢迎各位优秀人才的加盟！</p>
+            <p>&nbsp;</p>
+        </div>
+        <div id="section-history">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        <h2>1995</h2>
+                        <hr class="hr-sm">
+                        <p>
+                            <strong>7月</strong>
+                            <br> 注册成立台州永强工艺品有限公司。
+                        </p>
+                    </div>
+                    <div class="col-md-2">
+                        <h2>2000</h2>
+                        <hr class="hr-sm">
+                        <p>
+                            <strong>2月</strong>
+                            <br> 公司总经理谢建勇当选为台州市第二届人大代表。
+                        </p>
+                        <p>
+                            <strong>9月</strong>
+                            <br> 台州永强工艺品有限公司设立遮阳厂，专门生产铝制和木制太阳伞系列产品。
+                        </p>
+                    </div>
+                    <div class="col-md-2">
+                        <h2>2005</h2>
+                        <hr class="hr-sm">
+                        <p>
+                            <strong>12月</strong>
+                            <br> 集团出口销售首次超亿美元，成为临海市首家出口超亿美元的企业。
+                        </p>
+                    </div>
+                    <div class="col-md-2">
+                        <h2>2007</h2>
+                        <hr class="hr-sm">
+                        <p>
+                            <strong>6月</strong>
+                            <br> 浙江永强集团有限公司正式更名为浙江永强集团股份有限公司。
+                        </p>
+                        <p>
+                            <strong>12月</strong>
+                            <br> 公司的伞/蓬/家具被认定为浙江省名牌产品。
+                        </p>
+                    </div>
+                    <div class="col-md-2">
+                        <h2>2012</h2>
+                        <hr class="hr-sm">
+                        <p>
+                            <strong>4月</strong>
+                            <br> 来自毛里求斯、萨摩亚、美国、加拿大等20多个国家的驻华使领馆官员在台州市副秘书长葛昌选等有关领导的陪同下，参观考察永强集团，副总谢建平向驻华使领馆官员们做了详细的介绍。
+                        </p>
+                        <p>
+                            <strong>5月</strong>
+                            <br> 浙江省经信委主任谢力群等人构成的企业调研组莅临永强集团，集团董事长兼总经理谢建勇就行业前景和企业经济运行等情况展开了交流。
+                        </p>
+                        <p>
+                            <strong>10月</strong>
+                            <br> 永强集团户外实验室与BV国际检验集团顺利签约。
+                        </p>
+                    </div>
+                    <div class="col-md-2">
+                        <h2>2014</h2>
+                        <hr class="hr-sm">
+                        <p>
+                            <strong>6月</strong>
+                            <br> 在商务部中国对外经济贸易统计学会公布的2012年《中国民营进出口额500强企业排名》和《中国民营外贸500强企业排名》中，永强集团双双入围，分别位列第179位和第88位，是目前户外休闲用品行业中唯一获此殊荣的企业。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center hidden-xs" style="margin: 90px auto 50px;">
+            <p>
+                <img src="pic/value-cn.jpg">
+            </p>
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-2">
+                    <p><span style="font-size: 13px;">Visualize the invisible,Envision the future</span>
+                        <br>形其未见，成其未来</p>
+                </div>
+                <div class="col-md-2">
+                    <p>
+                        <br>尽一切可能成就用户</p>
+                </div>
+                <div class="col-md-2">
+                    <p>
+                        <br>激情　梦想　勇气　责任</p>
+                </div>
+                <div class="col-md-2">
+                    <p>
+                        以挣扎求创新
+                        <br> 以创新求发展
+                        <br> 以发展求支持
+                        <br> 以支持求卓越
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer" style="background:#666">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-3 col-xs-6">
+                    <ul>
+                        <li>中国上海市徐汇区</li>
+                        <li>Tel：18516635898</li>
+                        <li>Email：yuxizhe2008@163.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-sm-3 col-xs-6 text-right">
+                    <p>© copyright 2000-2015 于希哲
+                        <br>
+                    </p>
+                    <p><span id="sponsor">由 希哲 </a>设计开发</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 可选的Bootstrap主题文件（一般不使用） -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap-theme.min.css"></script>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script>
+    window.onload = function() {
+        $('.dropdown-menu-digital-pet').hide();
+        $('.dropdown-menu-animal-pet').hide();
+        $('.dropdown-menu-rad').hide();
 
-<div class="footer" style="background:#666">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-sm-3 col-xs-6">
-				<ul>
-					<li>中国上海市徐汇区</li>
-					<li>Tel：18516635898</li>
-					
-					<li>Email：yuxizhe2008@163.com</a></li>
-				</ul>
-				
-			</div>
-			<div class="col-md-6 col-sm-3 col-xs-6 text-right">
-				<p>© copyright 2000-2015 于希哲<br></p>
-				<p><span id="sponsor">由 希哲 </a>设计开发</span></p>
-			</div>
-		</div>
-	</div>
+    }
 
-	 <!-- 新 Bootstrap 核心 CSS 文件 -->
-	<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
 
-	<!-- 可选的Bootstrap主题文件（一般不使用） -->
-	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap-theme.min.css"></script>
+    jQuery(document).ready(function($) {
 
-	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
 
-	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        $('.dropdown-toggle-rad').click(function() {
+            $('.dropdown-menu-digital-pet').hide();
+            $('.dropdown-menu-animal-pet').hide();
+            $('.dropdown-menu-rad').slideToggle(250);
+        })
 
-</div>
+        $('.dropdown-toggle-digital-pet').click(function() {
+            $('.dropdown-menu-animal-pet').hide();
+            $('.dropdown-menu-rad').hide();
+            $('.dropdown-menu-digital-pet').slideToggle(250);
+        })
+
+        $('.dropdown-toggle-animal-pet').click(function() {
+            $('.dropdown-menu-digital-pet').hide();
+            $('.dropdown-menu-rad').hide();
+            $('.dropdown-menu-animal-pet').slideToggle(250);
+        })
+
+
+        // flexslider for homepage
+        $('#slider').flexslider({
+            animation: "fade",
+            controlNav: true,
+            directionNav: false,
+            animationLoop: false,
+            slideshow: false,
+        });
+
+
+
+
+
+
+    });
+    </script>
 </body>
+
 </html>
-
-
-
