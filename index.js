@@ -68,7 +68,7 @@ var showMem = function() {
 
 function settime() {
     var time = new Date();
-    firebaseData('time').push({ time: time.toLocaleString() }, function(error) {
+    firebaseData('time').set({ time: time.toLocaleString() }, function(error) {
         if (error) {
             console.log("Data could not be saved." + error);
         } else {
