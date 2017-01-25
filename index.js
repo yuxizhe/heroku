@@ -1,14 +1,14 @@
 var express = require('express');
 var app = express();
 var http = require("http");
-//var firebase = require("firebase");
+var firebase = require("firebase");
 var wilddog = require("wilddog");
 var parseString = require('xml2js').parseString;
 var os = require("os");
 var compression = require('compression');
 
 // firebase 0    wilddog 1
-var env = 1;
+var env = 0;
 
 if (env) {
     var config = {
@@ -22,15 +22,15 @@ if (env) {
         return wilddog.sync().ref('/' + id);
     };
 } else {
-    //好像是因为 服务器端的firebase 需要google身份认证 所以会被墙。暂时用 wilddog
-    // firebase.initializeApp({
-    //     serviceAccount: "./yuxizhe2008-pc.json",
-    //     databaseURL: "https://yuxizhe2008.firebaseio.com",
-    // });
+    // 好像是因为 服务器端的firebase 需要google身份认证 所以会被墙。暂时用 wilddog
+    firebase.initializeApp({
+        serviceAccount: "./yuxizhe2008-pc.json",
+        databaseURL: "https://yuxizhe2008.firebaseio.com",
+    });
 
-    // function firebaseData(id) {
-    //     return firebase.database().ref('/' + id);
-    // };
+    function firebaseData(id) {
+        return firebase.database().ref('/' + id);
+    };
 
 }
 
